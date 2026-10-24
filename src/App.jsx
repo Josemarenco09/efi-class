@@ -1,4 +1,5 @@
 import './App.css'
+import Carousel from './Carousel'
 import multimetro from './assets/img/multimetro.jpg'
 import escaner from './assets/img/escaner.jpg'
 import pizarra from './assets/img/pizarra.jpg'
@@ -207,15 +208,9 @@ function Hero() {
             </a>
           </div>
           <ol className="steps">
-            <li>
-              <span>01</span>Aprende
-            </li>
-            <li>
-              <span>02</span>Practica
-            </li>
-            <li>
-              <span>03</span>Aplica
-            </li>
+            <li>Aprende</li>
+            <li>Practica</li>
+            <li>Aplica</li>
           </ol>
         </div>
 
@@ -274,9 +269,8 @@ function Syllabus() {
         </div>
 
         <ol className="modules">
-          {MODULES.map((m, i) => (
+          {MODULES.map((m) => (
             <li className="module" key={m.title}>
-              <span className="module__num">{String(i + 1).padStart(2, '0')}</span>
               <span className="module__icon">
                 <Icon name={m.icon} />
               </span>
@@ -315,17 +309,14 @@ function Method() {
 
           <div className="pillars">
             <div className="pillar">
-              <span className="pillar__num">01</span>
               <h3>Aprende</h3>
               <p>Entiende la lógica del sistema: qué mide cada sensor y qué decide la ECU.</p>
             </div>
             <div className="pillar">
-              <span className="pillar__num">02</span>
               <h3>Practica</h3>
               <p>Mide, compara valores y lee señales reales con multímetro, osciloscopio y escáner.</p>
             </div>
             <div className="pillar">
-              <span className="pillar__num">03</span>
               <h3>Aplica</h3>
               <p>Lleva el diagnóstico al taller con un procedimiento claro y ordenado.</p>
             </div>
@@ -336,15 +327,42 @@ function Method() {
           <figure className="photo photo--a">
             <img src={pizarra} alt="Pizarra con el esquema del sensor de temperatura conectado a la ECU" />
             <figcaption>
-              <span>Fig. 01</span> Del sensor a la ECU, paso a paso en pizarra
+              Del sensor a la ECU, paso a paso en pizarra
             </figcaption>
           </figure>
           <figure className="photo photo--b">
             <img src={domino} alt="Dinámica de aprendizaje con fichas de dominó" />
             <figcaption>
-              <span>Fig. 02</span> Dinámicas con fichas para fijar conceptos
+              Dinámicas con fichas para fijar conceptos
             </figcaption>
           </figure>
+        </div>
+      </div>
+
+      <div className="container method__carousel">
+        <Carousel name="clase" wide />
+      </div>
+    </section>
+  )
+}
+
+function Dynamics() {
+  return (
+    <section className="section" id="dinamicas">
+      <div className="container">
+        <div className="dynamics__head">
+          <p className="kicker">Dinámicas</p>
+          <h2 className="section__title">
+            Se aprende <span className="hl-text">jugando</span>
+          </h2>
+          <p className="section__intro">
+            Juegos y evaluaciones interactivas para repasar lo visto y fijar cada concepto antes de
+            llegar a la moto.
+          </p>
+        </div>
+        <div className="dynamics__grid">
+          <Carousel name="domino" />
+          <Carousel name="evaluacion" />
         </div>
       </div>
     </section>
@@ -400,6 +418,10 @@ function Tools() {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="container tools__carousel">
+        <Carousel name="test" wide />
       </div>
     </section>
   )
@@ -460,6 +482,7 @@ export default function App() {
         <Ticker />
         <Syllabus />
         <Method />
+        <Dynamics />
         <Tools />
         <CallToAction />
       </main>

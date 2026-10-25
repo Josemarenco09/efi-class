@@ -215,6 +215,30 @@ main {
   text-transform: uppercase;
 }
 
+.hero__level {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-top: 26px;
+  padding: 9px 16px;
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 1.3vw, 15px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+.hero__level i {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--yellow);
+  transform: rotate(45deg);
+}
+
 .hl {
   position: relative;
   display: inline-block;

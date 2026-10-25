@@ -194,6 +194,9 @@ function Hero() {
           </p>
           <h1 className="hero__title">
             Curso de inyección <span className="hl">electrónica</span>
+            <span className="hero__level">
+              <i /> Nivel principiante – intermedio
+            </span>
           </h1>
           <p className="hero__lead">
             Entiende cómo funciona la inyección de tu moto, desde la ECU hasta el diagnóstico con

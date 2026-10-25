@@ -115,12 +115,29 @@
   scroll-snap-align: start;
 }
 
-.carousel__slide img {
-  width: 100%;
+/* La foto se muestra completa (sin recortar). Si es vertical, los lados
+   se rellenan con la misma foto desenfocada y oscurecida. */
+.carousel__slide {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
   border: 1px solid var(--line-strong);
   background: var(--panel);
+}
+
+.carousel__slide::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: var(--photo) center / cover no-repeat;
+  filter: blur(28px) brightness(0.35);
+}
+
+.carousel__slide img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   user-select: none;
 }
 

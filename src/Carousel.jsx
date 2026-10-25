@@ -82,7 +82,7 @@ export default function Carousel({ name, wide = false }) {
         }}
       >
         {images.map((src, i) => (
-          <figure className="carousel__slide" key={src}>
+          <figure className="carousel__slide" key={src} style={{ '--photo': `url("${src}")` }}>
             <img src={src} alt={`${alt} (${i + 1} de ${images.length})`} loading="lazy" draggable="false" />
           </figure>
         ))}

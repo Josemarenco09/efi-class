@@ -49,6 +49,8 @@ const MODULES = [
   },
 ]
 
+const YEAR = new Date().getFullYear()
+
 const TICKER = ['ECU', 'MAP', 'TPS', 'CKP', 'O₂', 'PWM', 'IAC', 'K-Line', 'CAN Bus', 'Inyectores', 'Osciloscopio', 'Escáner']
 
 function Icon({ name }) {
@@ -470,7 +472,7 @@ function Footer() {
           </span>
         </a>
         <p>Curso de inyección electrónica para motocicletas</p>
-        <p className="footer__copy">© {new Date().getFullYear()} EFI Training</p>
+        <p className="footer__copy">© {YEAR} EFI Training</p>
       </div>
     </footer>
   )
